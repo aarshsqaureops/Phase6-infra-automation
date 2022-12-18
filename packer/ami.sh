@@ -12,6 +12,6 @@ sudo chmod +x ./install
 sudo ./install auto > /tmp/logfile
 rm -rf amazon-cloudwatch-agent.deb
 rm -rf install
-sudo systemctl start codedeploy-agent
 sudo systemctl enable codedeploy-agent
-sudo systemctl restart codedeploy-agent
+sudo systemctl enable amazon-cloudwatch-agent.service
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c ssm:cloudwatch-aarsh
