@@ -13,6 +13,7 @@ source "amazon-ebs" "packer-ami-aarsh" {
     instance_type = "t3a.small"
     region = "us-west-2"
     ssh_username = "ubuntu"
+    iam_instance_profile = "role-aarsh"
 }
 
 build {
